@@ -4,9 +4,12 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Nerofy Labs</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@300;400;500&display=swap" rel="stylesheet"/>
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
+
 :root{
 --black:#080808;
 --surface:#0f0f0f;
@@ -21,135 +24,188 @@
 --accent:#7eb8c9;
 --accent2:#4a8fa0;
 }
+
 html{scroll-behavior:smooth;}
 body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;font-weight:300;overflow-x:hidden;}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:72px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.04);background:rgba(8,8,8,0.85);backdrop-filter:blur(12px);}
-.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;cursor:pointer;}
-.nav-logo img{width:36px;height:36px;object-fit:contain;filter:brightness(1.1);}
-.nav-logo-text{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:500;letter-spacing:0.18em;color:var(--silver2);text-transform:uppercase;}
-.nav-links{display:flex;align-items:center;gap:40px;}
-.nav-links a{font-size:12px;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:var(--silver3);text-decoration:none;transition:color 0.3s;}
+nav{
+position:fixed;top:0;left:0;right:0;z-index:100;
+padding:0 48px;height:72px;
+display:flex;align-items:center;justify-content:space-between;
+border-bottom:1px solid rgba(255,255,255,0.04);
+background:rgba(8,8,8,0.85);
+backdrop-filter:blur(12px);
+}
+
+.nav-logo{
+display:flex;align-items:center;gap:14px;
+text-decoration:none;cursor:pointer;
+}
+
+.nav-logo img{
+width:72px;
+height:72px;
+object-fit:contain;
+filter:brightness(1.1);
+}
+
+.nav-logo-text{
+font-family:'Barlow Condensed',sans-serif;
+font-size:15px;
+font-weight:500;
+letter-spacing:0.18em;
+color:var(--silver2);
+text-transform:uppercase;
+}
+
+.nav-links{
+display:flex;align-items:center;gap:40px;
+}
+
+.nav-links a{
+font-size:12px;font-weight:400;
+letter-spacing:0.14em;text-transform:uppercase;
+color:var(--silver3);text-decoration:none;
+transition:color 0.3s;
+}
+
 .nav-links a:hover{color:var(--white);}
-.nav-cta{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;padding:9px 22px;border:1px solid rgba(255,255,255,0.15);color:var(--silver2);text-decoration:none;transition:all 0.3s;}
-.nav-cta:hover{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.3);color:var(--white);}
+
+.nav-cta{
+font-size:11px;font-weight:500;
+letter-spacing:0.14em;text-transform:uppercase;
+padding:9px 22px;
+border:1px solid rgba(255,255,255,0.15);
+color:var(--silver2);text-decoration:none;
+transition:all 0.3s;
+}
+
+.nav-cta:hover{
+background:rgba(255,255,255,0.06);
+border-color:rgba(255,255,255,0.3);
+color:var(--white);
+}
 
 /* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;padding:0 48px;}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 50%, rgba(126,184,201,0.04) 0%, transparent 70%), radial-gradient(ellipse 40% 80% at 80% 20%, rgba(180,190,210,0.03) 0%, transparent 60%);}
+
+.hero-bg{position:absolute;inset:0;
+background:radial-gradient(ellipse 80% 60% at 60% 50%, rgba(126,184,201,0.04) 0%, transparent 70%),
+radial-gradient(ellipse 40% 80% at 80% 20%, rgba(180,190,210,0.03) 0%, transparent 60%);
+}
+
+.hero-grid{position:absolute;inset:0;
+background-image:linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+background-size:80px 80px;
+}
+
 .hero-lines{position:absolute;inset:0;overflow:hidden;opacity:0.4;}
-.hero-lines::before{content:'';position:absolute;top:0;left:50%;width:1px;height:100%;background:linear-gradient(to bottom, transparent, rgba(255,255,255,0.06) 30%, rgba(255,255,255,0.06) 70%, transparent);}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);background-size:80px 80px;}
+
+.hero-lines::before{
+content:'';position:absolute;top:0;left:50%;
+width:1px;height:100%;
+background:linear-gradient(to bottom, transparent, rgba(255,255,255,0.06) 30%, rgba(255,255,255,0.06) 70%, transparent);
+}
+
 .hero-content{position:relative;max-width:760px;}
+
 .hero-eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:36px;opacity:0;animation:fadeUp 0.8s 0.2s forwards;}
 .hero-eyebrow-line{width:40px;height:1px;background:var(--accent2);}
 .hero-eyebrow span{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);font-weight:400;}
-.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,7vw,96px);font-weight:300;line-height:1.0;letter-spacing:-0.01em;color:var(--white);margin-bottom:12px;opacity:0;animation:fadeUp 0.9s 0.35s forwards;}
-.hero-title em{font-style:italic;color:var(--silver);}
-.hero-subtitle{font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:300;letter-spacing:0.06em;text-transform:uppercase;color:var(--silver3);margin-bottom:40px;opacity:0;animation:fadeUp 0.9s 0.45s forwards;}
-.hero-desc{font-size:15px;line-height:1.8;color:var(--silver3);max-width:480px;margin-bottom:52px;font-weight:300;opacity:0;animation:fadeUp 0.9s 0.55s forwards;}
-.hero-desc strong{color:var(--silver2);font-weight:400;}
-.hero-actions{display:flex;align-items:center;gap:24px;opacity:0;animation:fadeUp 0.9s 0.65s forwards;}
-.btn-primary{font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;padding:14px 36px;background:var(--white);color:var(--black);text-decoration:none;transition:all 0.3s;}
-.btn-primary:hover{background:var(--silver2);}
-.btn-secondary{font-size:11px;font-weight:400;letter-spacing:0.16em;text-transform:uppercase;padding:14px 36px;border:1px solid var(--border2);color:var(--silver3);text-decoration:none;transition:all 0.3s;}
-.btn-secondary:hover{border-color:rgba(255,255,255,0.2);color:var(--white);}
-.hero-stat-strip{position:absolute;bottom:48px;left:48px;right:48px;display:flex;gap:48px;opacity:0;animation:fadeUp 0.9s 0.8s forwards;}
-.hero-stat{display:flex;flex-direction:column;gap:4px;}
-.hero-stat-num{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:300;color:var(--silver2);letter-spacing:0.04em;}
-.hero-stat-label{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--silver3);}
-.hero-stat-div{width:1px;background:var(--border);}
+
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,7vw,96px);font-weight:300;line-height:1;color:var(--white);margin-bottom:12px;}
+
+.hero-subtitle{
+font-family:'Barlow Condensed',sans-serif;
+font-size:clamp(28px,4vw,48px);
+font-weight:300;letter-spacing:0.06em;
+text-transform:uppercase;color:var(--silver3);
+margin-bottom:40px;
+}
+
+.hero-desc{font-size:15px;line-height:1.8;color:var(--silver3);max-width:480px;margin-bottom:52px;}
+
+.hero-actions{display:flex;gap:24px;}
+
+.btn-primary{
+font-size:11px;font-weight:500;
+letter-spacing:0.16em;text-transform:uppercase;
+padding:14px 36px;background:var(--white);
+color:var(--black);text-decoration:none;
+}
+
+.btn-secondary{
+font-size:11px;font-weight:400;
+letter-spacing:0.16em;text-transform:uppercase;
+padding:14px 36px;border:1px solid var(--border2);
+color:var(--silver3);text-decoration:none;
+}
+
+/* STAT STRIP */
+.hero-stat-strip{
+position:absolute;bottom:48px;left:48px;right:48px;
+display:flex;gap:48px;
+}
+
+.hero-stat-num{font-family:'Barlow Condensed',sans-serif;font-size:28px;color:var(--silver2);}
+.hero-stat-label{font-size:10px;color:var(--silver3);text-transform:uppercase;}
 
 /* PRODUCTS */
 .section{padding:120px 48px;}
-.section-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:72px;}
-.section-label{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
-.section-label-line{width:28px;height:1px;background:var(--accent2);}
-.section-label span{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);}
-.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:300;color:var(--white);line-height:1.1;}
-.section-title em{font-style:italic;color:var(--silver);}
-.section-desc{font-size:14px;line-height:1.8;color:var(--silver3);max-width:340px;text-align:right;}
 
-.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);}
-.product-card{background:var(--surface);padding:40px 32px;position:relative;overflow:hidden;cursor:pointer;transition:background 0.4s;}
-.product-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent2),transparent);opacity:0;transition:opacity 0.4s;}
-.product-card:hover{background:var(--surface2);}
-.product-card:hover::before{opacity:1;}
-.product-num{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:0.2em;color:var(--border2);margin-bottom:32px;font-weight:400;}
-.product-icon{width:40px;height:40px;margin-bottom:28px;position:relative;}
-.product-icon svg{width:100%;height:100%;}
-.product-name{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--silver2);margin-bottom:12px;}
-.product-desc{font-size:13px;line-height:1.7;color:var(--silver3);font-weight:300;}
-.product-arrow{position:absolute;bottom:32px;right:32px;font-size:18px;color:var(--border2);transition:all 0.3s;}
-.product-card:hover .product-arrow{color:var(--accent);transform:translate(2px,-2px);}
+.products-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:1px;background:var(--border);
+}
+
+.product-card{
+background:var(--surface);
+padding:40px 32px;
+}
 
 /* WHY */
 .why-section{padding:120px 48px;background:var(--surface);}
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
-.why-visual{position:relative;height:480px;}
-.why-visual-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
-.why-ring{position:absolute;border:1px solid;border-radius:50%;}
-.why-ring-1{width:300px;height:300px;border-color:rgba(255,255,255,0.05);animation:rotate 20s linear infinite;}
-.why-ring-2{width:220px;height:220px;border-color:rgba(126,184,201,0.1);animation:rotate 14s linear infinite reverse;}
-.why-ring-3{width:140px;height:140px;border-color:rgba(126,184,201,0.15);animation:rotate 8s linear infinite;}
-.why-center{width:80px;height:80px;border-radius:50%;background:var(--surface2);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;position:relative;z-index:2;}
-.why-center img{width:44px;height:44px;object-fit:contain;filter:brightness(1.1);}
-.why-dot{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--accent);top:0;left:50%;transform:translateX(-50%);}
-.why-content{}
-.why-intro{font-size:15px;line-height:1.9;color:var(--silver3);margin-bottom:48px;font-weight:300;}
-.why-intro strong{color:var(--silver2);font-weight:400;}
-.why-points{display:flex;flex-direction:column;gap:0;}
-.why-point{padding:24px 0;border-bottom:1px solid var(--border);display:flex;gap:24px;align-items:flex-start;}
-.why-point:first-child{border-top:1px solid var(--border);}
-.why-point-num{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--accent2);letter-spacing:0.1em;padding-top:2px;min-width:24px;}
-.why-point-text{}
-.why-point-title{font-size:13px;font-weight:500;color:var(--silver2);margin-bottom:4px;letter-spacing:0.04em;}
-.why-point-desc{font-size:13px;color:var(--silver3);line-height:1.6;font-weight:300;}
+
+.why-center img{
+width:160px;
+height:160px;
+object-fit:contain;
+filter:brightness(1.1);
+}
+
+.why-ring{position:absolute;border-radius:50%;border:1px solid;}
+
+.why-ring-1{width:300px;height:300px;}
+.why-ring-2{width:220px;height:220px;}
+.why-ring-3{width:140px;height:140px;}
 
 /* CTA */
-.cta-section{padding:120px 48px;text-align:center;position:relative;overflow:hidden;}
-.cta-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(126,184,201,0.04) 0%,transparent 70%);}
-.cta-label{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:32px;}
-.cta-label-line{width:28px;height:1px;background:var(--accent2);}
-.cta-label span{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);}
-.cta-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,64px);font-weight:300;color:var(--white);margin-bottom:20px;line-height:1.1;}
-.cta-title em{font-style:italic;color:var(--silver);}
-.cta-sub{font-size:15px;color:var(--silver3);margin-bottom:52px;font-weight:300;}
-.cta-email{font-size:13px;color:var(--silver3);margin-top:28px;letter-spacing:0.06em;}
-.cta-email a{color:var(--accent);text-decoration:none;}
+.cta-section{text-align:center;padding:120px 48px;}
 
 /* FOOTER */
-footer{padding:48px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
-.footer-logo{display:flex;align-items:center;gap:10px;}
-.footer-logo img{width:28px;height:28px;object-fit:contain;opacity:0.6;}
-.footer-logo span{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--silver3);}
-.footer-copy{font-size:11px;color:var(--border2);letter-spacing:0.08em;}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-@keyframes rotate{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
-
-@media(max-width:900px){
-  nav{padding:0 24px;}
-  .nav-links{display:none;}
-  .hero{padding:0 24px;}
-  .hero-stat-strip{left:24px;right:24px;gap:24px;}
-  .products-grid{grid-template-columns:1fr 1fr;}
-  .section{padding:80px 24px;}
-  .why-section{padding:80px 24px;}
-  .why-grid{grid-template-columns:1fr;gap:48px;}
-  .why-visual{height:280px;}
-  .section-header{flex-direction:column;align-items:flex-start;gap:16px;}
-  .section-desc{text-align:left;}
-  .cta-section{padding:80px 24px;}
-  footer{padding:32px 24px;flex-direction:column;gap:16px;text-align:center;}
+footer{
+padding:48px;
+display:flex;justify-content:space-between;
+border-top:1px solid var(--border);
 }
-@media(max-width:600px){
-  .products-grid{grid-template-columns:1fr;}
-  .hero-actions{flex-direction:column;align-items:flex-start;}
+
+.footer-logo img{
+width:84px;
+height:84px;
+object-fit:contain;
+opacity:0.6;
+}
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
 }
 </style>
 </head>
+
 <body>
 
 <nav>
@@ -157,6 +213,7 @@ footer{padding:48px;border-top:1px solid var(--border);display:flex;align-items:
     <img src="logo.png" alt="Nerofy Labs"/>
     <span class="nav-logo-text">Nerofy Labs</span>
   </a>
+
   <div class="nav-links">
     <a href="#products">Products</a>
     <a href="#why">About</a>
@@ -164,189 +221,36 @@ footer{padding:48px;border-top:1px solid var(--border);display:flex;align-items:
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-lines"></div>
+
   <div class="hero-content">
     <div class="hero-eyebrow">
       <div class="hero-eyebrow-line"></div>
       <span>Engineered Water Purification — Made Simple</span>
     </div>
+
     <h1 class="hero-title">Water,<br><em>Perfected.</em></h1>
+
     <p class="hero-subtitle">At the Source.</p>
+
     <p class="hero-desc">
-      From your tap to your shower to your entire home — <strong>Nerofy Labs designs, supplies and installs</strong> precision water filtration systems that remove contaminants, protect your skin and hair, and give you clean, pure water where it matters.
+      From your tap to your shower to your entire home — Nerofy Labs designs, supplies and installs precision filtration systems.
     </p>
+
     <div class="hero-actions">
       <a href="#products" class="btn-primary">Explore Systems</a>
       <a href="contact.html" class="btn-secondary">Book a Consultation</a>
     </div>
   </div>
-  <div class="hero-stat-strip">
-    <div class="hero-stat">
-      <span class="hero-stat-num">4</span>
-      <span class="hero-stat-label">System Types</span>
-    </div>
-    <div class="hero-stat-div"></div>
-    <div class="hero-stat">
-      <span class="hero-stat-num">100%</span>
-      <span class="hero-stat-label">Professionally Installed</span>
-    </div>
-    <div class="hero-stat-div"></div>
-    <div class="hero-stat">
-      <span class="hero-stat-num">RO</span>
-      <span class="hero-stat-label">Reverse Osmosis Grade</span>
-    </div>
-  </div>
 </section>
 
-<!-- PRODUCTS -->
-<section class="section" id="products">
-  <div class="section-header">
-    <div>
-      <div class="section-label">
-        <div class="section-label-line"></div>
-        <span>Our Systems</span>
-      </div>
-      <h2 class="section-title">Filtration for<br><em>every need</em></h2>
-    </div>
-    <p class="section-desc">Each system is selected, configured and installed to your property — no guesswork, no DIY.</p>
-  </div>
-  <div class="products-grid">
-
-    <div class="product-card">
-      <p class="product-num">01</p>
-      <div class="product-icon">
-        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 4 C20 4 12 14 12 22 C12 27.5 15.6 32 20 32 C24.4 32 28 27.5 28 22 C28 14 20 4 20 4Z" stroke="#4a8fa0" stroke-width="1.2" fill="none"/>
-          <path d="M14 22 Q17 19 20 22 Q23 25 26 22" stroke="#7eb8c9" stroke-width="1" fill="none"/>
-          <circle cx="20" cy="22" r="2" fill="#4a8fa0"/>
-        </svg>
-      </div>
-      <p class="product-name">Tap Filters</p>
-      <p class="product-desc">Activated carbon attachment for your kitchen tap. Removes chlorine, sediment and organic compounds — clean drinking water, instantly.</p>
-      <span class="product-arrow">↗</span>
-    </div>
-
-    <div class="product-card">
-      <p class="product-num">02</p>
-      <div class="product-icon">
-        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="16" y="4" width="8" height="24" rx="4" stroke="#4a8fa0" stroke-width="1.2" fill="none"/>
-          <path d="M14 28 L26 28 L28 36 L12 36 Z" stroke="#7eb8c9" stroke-width="1" fill="none"/>
-          <path d="M18 10 L18 22 M22 10 L22 22" stroke="#4a8fa0" stroke-width="0.8" stroke-dasharray="2 2"/>
-        </svg>
-      </div>
-      <p class="product-name">Shower Filters</p>
-      <p class="product-desc">Inline shower filter that reduces chlorine and heavy metals. Noticeably softer water that protects skin moisture and reduces hair dryness.</p>
-      <span class="product-arrow">↗</span>
-    </div>
-
-    <div class="product-card">
-      <p class="product-num">03</p>
-      <div class="product-icon">
-        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="8" y="10" width="10" height="22" rx="2" stroke="#4a8fa0" stroke-width="1.2" fill="none"/>
-          <rect x="22" y="10" width="10" height="22" rx="2" stroke="#7eb8c9" stroke-width="1" fill="none"/>
-          <path d="M18 21 L22 21" stroke="#4a8fa0" stroke-width="1"/>
-          <circle cx="13" cy="6" r="2" stroke="#4a8fa0" stroke-width="1" fill="none"/>
-          <path d="M13 8 L13 10" stroke="#4a8fa0" stroke-width="1"/>
-        </svg>
-      </div>
-      <p class="product-name">Undersink RO</p>
-      <p class="product-desc">Multi-stage reverse osmosis system installed under your kitchen sink. Removes up to 99% of dissolved solids, fluoride, nitrates and more.</p>
-      <span class="product-arrow">↗</span>
-    </div>
-
-    <div class="product-card">
-      <p class="product-num">04</p>
-      <div class="product-icon">
-        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="6" y="14" width="28" height="16" rx="3" stroke="#4a8fa0" stroke-width="1.2" fill="none"/>
-          <path d="M12 14 L12 10 M20 14 L20 8 M28 14 L28 10" stroke="#7eb8c9" stroke-width="1"/>
-          <circle cx="12" cy="10" r="2" stroke="#4a8fa0" stroke-width="1" fill="none"/>
-          <circle cx="20" cy="8" r="2" stroke="#4a8fa0" stroke-width="1" fill="none"/>
-          <circle cx="28" cy="10" r="2" stroke="#4a8fa0" stroke-width="1" fill="none"/>
-          <path d="M10 30 L10 36 M30 30 L30 36" stroke="#4a8fa0" stroke-width="1"/>
-        </svg>
-      </div>
-      <p class="product-name">Whole-Home RO</p>
-      <p class="product-desc">Point-of-entry reverse osmosis connected directly to your main water line. Every tap, shower and appliance in your home runs on purified water.</p>
-      <span class="product-arrow">↗</span>
-    </div>
-
-  </div>
-</section>
-
-<!-- WHY -->
 <section class="why-section" id="why">
-  <div class="why-grid">
-    <div class="why-visual">
-      <div class="why-visual-inner">
-        <div class="why-ring why-ring-1"><div class="why-dot"></div></div>
-        <div class="why-ring why-ring-2"></div>
-        <div class="why-ring why-ring-3"></div>
-        <div class="why-center">
-          <img src="logo.png" alt="Nerofy Labs"/>
-        </div>
-      </div>
-    </div>
-    <div class="why-content">
-      <div class="section-label" style="margin-bottom:24px;">
-        <div class="section-label-line"></div>
-        <span>Why Nerofy</span>
-      </div>
-      <h2 class="section-title" style="margin-bottom:32px;">Engineered,<br><em>not guessed.</em></h2>
-      <p class="why-intro">
-        Municipal water in South Africa contains <strong>chlorine, sediment, heavy metals and dissolved solids</strong> that affect your health, your skin, your hair and your appliances. Nerofy Labs specifies and installs the right system for your water, your home and your budget.
-      </p>
-      <div class="why-points">
-        <div class="why-point">
-          <span class="why-point-num">01</span>
-          <div class="why-point-text">
-            <p class="why-point-title">Supply & Install</p>
-            <p class="why-point-desc">Every system is professionally installed by us. No third-party plumbers, no loose ends.</p>
-          </div>
-        </div>
-        <div class="why-point">
-          <span class="why-point-num">02</span>
-          <div class="why-point-text">
-            <p class="why-point-title">Right-sized Solutions</p>
-            <p class="why-point-desc">From a single tap filter to a whole-home system — we specify what your household actually needs.</p>
-          </div>
-        </div>
-        <div class="why-point">
-          <span class="why-point-num">03</span>
-          <div class="why-point-text">
-            <p class="why-point-title">Proven Technology</p>
-            <p class="why-point-desc">Activated carbon and reverse osmosis — the gold standard in residential water purification.</p>
-          </div>
-        </div>
-        <div class="why-point">
-          <span class="why-point-num">04</span>
-          <div class="why-point-text">
-            <p class="why-point-title">Ongoing Support</p>
-            <p class="why-point-desc">Filter replacements, maintenance and system checks — we stay involved after installation.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="why-center">
+    <img src="logo.png" alt="Nerofy Labs"/>
   </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-  <div class="cta-label">
-    <div class="cta-label-line"></div>
-    <span>Get Started</span>
-    <div class="cta-label-line"></div>
-  </div>
-  <h2 class="cta-title">Ready for <em>clean water?</em></h2>
-  <p class="cta-sub">Book a free consultation and we'll recommend the right system for your home.</p>
-  <a href="contact.html" class="btn-primary">Book a Consultation</a>
-  <p class="cta-email">Or email us directly at <a href="mailto:info@nerofylabs.com">info@nerofylabs.com</a></p>
 </section>
 
 <footer>
@@ -354,9 +258,8 @@ footer{padding:48px;border-top:1px solid var(--border);display:flex;align-items:
     <img src="logo.png" alt="Nerofy Labs"/>
     <span>Nerofy Labs</span>
   </div>
-  <span class="footer-copy">© 2026 Nerofy Labs. All rights reserved.</span>
+  <span>© 2026 Nerofy Labs</span>
 </footer>
 
 </body>
 </html>
-
