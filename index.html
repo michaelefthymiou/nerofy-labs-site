@@ -131,18 +131,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 40px;height:80px;d
 .orbit-ring-3{width:220px;height:220px;border-color:rgba(106,180,204,0.18);animation:spin 10s linear infinite reverse;}
 
 /* orbiting dot on ring 2 */
-.orbit-dot-wrap{position:absolute;width:310px;height:310px;animation:spin 16s linear infinite;}
-.orbit-dot{position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:20px;height:20px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px rgba(106,180,204,0.7);}
+.orbit-dot-wrap{position:absolute;width:310px;height:310px;animation:spin 16s linear infinite;z-index:5; /* higher than center */}
+.orbit-dot{position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:20px;height:20px;border-radius:50%;background:rgba(126,184,201,1); /* full strength accent */box-shadow:0 0 12px rgba(126,184,201,0.9),0 0 24px rgba(126,184,201,0.7),0 0 40px rgba(126,184,201,0.5);}
 
 /* orbiting dot on ring 3 */
-.orbit-dot-wrap-2{position:absolute;width:220px;height:220px;animation:spin 10s linear infinite reverse;}
-.orbit-dot-2{position:absolute;top:-8px;left:50%;transform:translateX(-50%);width:16px;height:16px;border-radius:50%;background:rgba(255,255,255,0.6);box-shadow:0 0 10px rgba(255,255,255,0.4);}
+.orbit-dot-wrap-2{position:absolute;width:220px;height:220px;animation:spin 10s linear infinite reverse;z-index:5; /* same here */}
+.orbit-dot-2{position:absolute;top:-8px;left:50%;transform:translateX(-50%);width:16px;height:16px;border-radius:50%;background:rgba(255,255,255,0.95);box-shadow:0 0 10px rgba(255,255,255,0.9),0 0 20px rgba(255,255,255,0.7),0 0 35px rgba(255,255,255,0.5);}
 
 .orbit-center{width:190px;height:190px;border-radius:50%;background:var(--surface2);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;position:relative;z-index:2;}
 .orbit-center img{width:190px;height:190px;object-fit:contain;}
 
 /* glow underneath */
-.orbit-glow{position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(106,180,204,0.08) 0%,transparent 70%);pointer-events:none;}
+.orbit-glow{position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(126,184,201,0.15) 0%,rgba(126,184,201,0.08) 40%,transparent 70%);}
 
 .why-content{}
 .why-intro{font-size:18px;line-height:1.9;color:var(--silver3);margin-bottom:48px;font-weight:300;}
