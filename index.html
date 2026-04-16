@@ -27,15 +27,16 @@ html{scroll-behavior:smooth;}
 body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;font-weight:300;overflow-x:hidden;font-size:20px;}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 40px;height:80px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.1);background:rgba(6,6,8,0.92);backdrop-filter:blur(16px);}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 40px;height:80px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(0,0,0,0.12);background:rgba(255,255,255,0.96);backdrop-filter:blur(16px);}
 .nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;cursor:pointer;}
-.nav-logo img{width:56px;height:56px;object-fit:contain;}
-.nav-logo-text{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:500;letter-spacing:0.18em;color:#fff;text-transform:uppercase;}
+.nav-logo img{width:56px; height:56px;object-fit:contain;}
+.nav-logo-text{ font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:500;letter-spacing:0.18em;color:#000;text-transform:uppercase;}
 .nav-links{display:flex;align-items:center;gap:40px;}
-.nav-links a{font-size:16px;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.3s;}
-.nav-links a:hover{color:#fff;}
-.nav-cta{font-size:15px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;padding:11px 28px;border:1px solid rgba(255,255,255,0.4);color:#fff;text-decoration:none;transition:all 0.3s;border-radius:2px;}
-.nav-cta:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.7);}
+.nav-links a{font-size:16px;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:rgba(0,0,0,0.72);text-decoration:none;transition:color 0.3s;}
+.nav-links a:hover{color:#000;}
+
+.nav-cta{font-size:15px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;padding:11px 28px;border:1px solid rgba(0,0,0,0.28);color:#000;text-decoration:none;transition:all 0.3s;border-radius:2px;}
+.nav-cta:hover{background:rgba(0,0,0,0.05);border-color:rgba(0,0,0,0.55);}
 
 /* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;padding:140px 56px 180px;}
@@ -101,7 +102,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 40px;height:80px;d
 
 /* white outline grid for products */
 .products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.08);}
-.product-card{background:var(--surface);padding:44px 36px 64px;position:relative;overflow:hidden;transition:background 0.4s;}
+.product-card{background:var(--surface);padding:44px 36px 64px;position:relative;overflow:hidden;transition:background 0.4s;display:block;text-decoration:none;cursor:pointer;}
 .product-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.12),transparent);opacity:0;transition:opacity 0.4s;}
 .product-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(106,180,204,0.8),transparent);opacity:0;transition:opacity 0.4s;}
 .product-card:hover{background:rgba(20,22,32,0.98);}
@@ -239,13 +240,13 @@ footer{padding:48px 56px;border-top:1px solid rgba(255,255,255,0.08);display:fle
 <body>
 
 <nav>
-  <a class="nav-logo" href="#">
+  <a class="nav-logo" href="index.html">
     <img src="logo.png" alt="Nerofy Labs"/>
     <span class="nav-logo-text">Nerofy Labs</span>
   </a>
   <div class="nav-links">
-    <a href="#products">Products</a>
-    <a href="#why">About</a>
+    <a href="products.html">Products</a>
+    <a href="#why">About Us</a>
     <a href="contact.html" class="nav-cta">Get in Touch</a>
   </div>
 </nav>
@@ -328,47 +329,51 @@ footer{padding:48px 56px;border-top:1px solid rgba(255,255,255,0.08);display:fle
     <p class="section-sub">Each system is specified, supplied and installed to suit your home — no guesswork, no DIY.</p>
   </div>
   <div class="products-grid">
-    <div class="product-card">
-      <div class="product-card-corner"></div>
-      <p class="product-num">01</p>
-      <div class="product-icon">
-        <svg viewBox="0 0 48 48" fill="none"><path d="M24 6C24 6 14 18 14 27C14 33.6 18.5 39 24 39C29.5 39 34 33.6 34 27C34 18 24 6 24 6Z" stroke="rgba(255,255,255,0.5)" stroke-width="1.4" fill="none"/><path d="M17 27 Q20.5 23.5 24 27 Q27.5 30.5 31 27" stroke="rgba(106,180,204,0.9)" stroke-width="1.2" fill="none"/><circle cx="24" cy="27" r="2.5" fill="rgba(106,180,204,0.8)"/></svg>
-      </div>
-      <p class="product-name">Tap Filters</p>
-      <p class="product-desc">Activated carbon attachment for your kitchen tap. Removes chlorine, sediment and organic compounds — clean drinking water, instantly.</p>
-      <span class="product-arrow">↗</span>
+<div class="products-grid">
+  <a href="products.html" class="product-card">
+    <div class="product-card-corner"></div>
+    <p class="product-num">01</p>
+    <div class="product-icon">
+      <svg viewBox="0 0 48 48" fill="none"><path d="M24 6C24 6 14 18 14 27C14 33.6 18.5 39 24 39C29.5 39 34 33.6 34 27C34 18 24 6 24 6Z" stroke="rgba(255,255,255,0.5)" stroke-width="1.4" fill="none"/><path d="M17 27 Q20.5 23.5 24 27 Q27.5 30.5 31 27" stroke="rgba(106,180,204,0.9)" stroke-width="1.2" fill="none"/><circle cx="24" cy="27" r="2.5" fill="rgba(106,180,204,0.8)"/></svg>
     </div>
-    <div class="product-card">
-      <div class="product-card-corner"></div>
-      <p class="product-num">02</p>
-      <div class="product-icon">
-        <svg viewBox="0 0 48 48" fill="none"><rect x="19" y="5" width="10" height="28" rx="5" stroke="rgba(255,255,255,0.5)" stroke-width="1.4" fill="none"/><path d="M16 33L32 33L34 43L14 43Z" stroke="rgba(106,180,204,0.9)" stroke-width="1.2" fill="none"/><path d="M22 12L22 26 M26 12L26 26" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-dasharray="2.5 2.5"/></svg>
-      </div>
-      <p class="product-name">Shower Filters</p>
-      <p class="product-desc">Inline shower filter reducing chlorine and heavy metals. Visibly softer water — healthier skin and less hair dryness from day one.</p>
-      <span class="product-arrow">↗</span>
+    <p class="product-name">Tap Filters</p>
+    <p class="product-desc">Activated carbon attachment for your kitchen tap. Removes chlorine, sediment and organic compounds — clean drinking water, instantly.</p>
+    <span class="product-arrow">↗</span>
+  </a>
+
+  <a href="products.html" class="product-card">
+    <div class="product-card-corner"></div>
+    <p class="product-num">02</p>
+    <div class="product-icon">
+      <svg viewBox="0 0 48 48" fill="none"><rect x="19" y="5" width="10" height="28" rx="5" stroke="rgba(255,255,255,0.5)" stroke-width="1.4" fill="none"/><path d="M16 33L32 33L34 43L14 43Z" stroke="rgba(106,180,204,0.9)" stroke-width="1.2" fill="none"/><path d="M22 12L22 26 M26 12L26 26" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-dasharray="2.5 2.5"/></svg>
     </div>
-    <div class="product-card">
-      <div class="product-card-corner"></div>
-      <p class="product-num">03</p>
-      <div class="product-icon">
-        <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="12" width="13" height="26" rx="2" stroke="rgba(255,255,255,0.5)" stroke-width="1.4" fill="none"/><rect x="27" y="12" width="13" height="26" rx="2" stroke="rgba(106,180,204,0.9)" stroke-width="1.2" fill="none"/><path d="M21 25L27 25" stroke="rgba(255,255,255,0.6)" stroke-width="1.2"/><circle cx="14.5" cy="7" r="2.5" stroke="rgba(255,255,255,0.5)" stroke-width="1.2" fill="none"/><path d="M14.5 9.5L14.5 12" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/></svg>
-      </div>
-      <p class="product-name">Undersink RO</p>
-      <p class="product-desc">Multi-stage reverse osmosis installed under your kitchen sink. Removes up to 99% of dissolved solids, fluoride and nitrates.</p>
-      <span class="product-arrow">↗</span>
+    <p class="product-name">Shower Filters</p>
+    <p class="product-desc">Inline shower filter reducing chlorine and heavy metals. Visibly softer water — healthier skin and less hair dryness from day one.</p>
+    <span class="product-arrow">↗</span>
+  </a>
+
+  <a href="products.html" class="product-card">
+    <div class="product-card-corner"></div>
+    <p class="product-num">03</p>
+    <div class="product-icon">
+      <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="12" width="13" height="26" rx="2" stroke="rgba(255,255,255,0.5)" stroke-width="1.4" fill="none"/><rect x="27" y="12" width="13" height="26" rx="2" stroke="rgba(106,180,204,0.9)" stroke-width="1.2" fill="none"/><path d="M21 25L27 25" stroke="rgba(255,255,255,0.6)" stroke-width="1.2"/><circle cx="14.5" cy="7" r="2.5" stroke="rgba(255,255,255,0.5)" stroke-width="1.2" fill="none"/><path d="M14.5 9.5L14.5 12" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/></svg>
     </div>
-    <div class="product-card">
-      <div class="product-card-corner"></div>
-      <p class="product-num">04</p>
-      <div class="product-icon">
-        <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="16" width="36" height="18" rx="3" stroke="rgba(255,255,255,0.5)" stroke-width="1.4" fill="none"/><path d="M14 16L14 11 M24 16L24 8 M34 16L34 11" stroke="rgba(106,180,204,0.9)" stroke-width="1.2"/><circle cx="14" cy="11" r="2.5" stroke="rgba(255,255,255,0.5)" stroke-width="1.2" fill="none"/><circle cx="24" cy="8" r="2.5" stroke="rgba(255,255,255,0.5)" stroke-width="1.2" fill="none"/><circle cx="34" cy="11" r="2.5" stroke="rgba(255,255,255,0.5)" stroke-width="1.2" fill="none"/><path d="M12 34L12 42 M36 34L36 42" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/></svg>
-      </div>
-      <p class="product-name">Whole-Home RO</p>
-      <p class="product-desc">Point-of-entry system connected to your main water line. Every tap, shower and appliance in your home runs on purified water.</p>
-      <span class="product-arrow">↗</span>
+    <p class="product-name">Undersink RO</p>
+    <p class="product-desc">Multi-stage reverse osmosis installed under your kitchen sink. Removes up to 99% of dissolved solids, fluoride and nitrates.</p>
+    <span class="product-arrow">↗</span>
+  </a>
+
+  <a href="products.html" class="product-card">
+    <div class="product-card-corner"></div>
+    <p class="product-num">04</p>
+    <div class="product-icon">
+      <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="16" width="36" height="18" rx="3" stroke="rgba(255,255,255,0.5)" stroke-width="1.4" fill="none"/><path d="M14 16L14 11 M24 16L24 8 M34 16L34 11" stroke="rgba(106,180,204,0.9)" stroke-width="1.2"/><circle cx="14" cy="11" r="2.5" stroke="rgba(255,255,255,0.5)" stroke-width="1.2" fill="none"/><circle cx="24" cy="8" r="2.5" stroke="rgba(255,255,255,0.5)" stroke-width="1.2" fill="none"/><circle cx="34" cy="11" r="2.5" stroke="rgba(255,255,255,0.5)" stroke-width="1.2" fill="none"/><path d="M12 34L12 42 M36 34L36 42" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/></svg>
     </div>
-  </div>
+    <p class="product-name">Whole-Home RO</p>
+    <p class="product-desc">Point-of-entry system connected to your main water line. Every tap, shower and appliance in your home runs on purified water.</p>
+    <span class="product-arrow">↗</span>
+  </a>
+</div>
 </section>
 
 <div class="light-divider"></div>
