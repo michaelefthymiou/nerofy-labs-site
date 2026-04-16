@@ -53,6 +53,9 @@ body {
   background: #1a1a1a;
 }
 
+.text-panel{display:inline-block;background:#fff;color:#000;padding:10px 14px;border-radius:2px;box-decoration-break:clone;-webkit-box-decoration-break:clone;}
+.text-panel strong{color:#000;}
+
 footer {
   padding: 20px;
   color: #777;
