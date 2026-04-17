@@ -41,7 +41,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 40px;height:80px;d
 .nav-links{display:flex;align-items:center;gap:40px;}
 .nav-links a{font-size:16px;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.3s;}
 .nav-links a:hover,.nav-links a.active{color:#fff;}
-.nav-cta{font-size:15px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;padding:11px 28px;border:1px solid rgba(255,255,255,0.4);color:#fff;text-decoration:none;transition:all 0.3s;border-radius:2px;}
+.nav-cta{font-size:15px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;padding:11px 28px;border:1px solid rgba(255,255,255,0.4);color:#fff;text-decoration:none;transition:all 0.3s;border-radius:8px;}
 .nav-cta:hover{background:rgba(255,255,255,0.08);}
 
 /* PAGE HEADER */
@@ -105,7 +105,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 40px;height:80px;d
 .spec-pill{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;padding:6px 14px;border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.5);border-radius:1px;background:rgba(255,255,255,0.03);}
 .spec-pill-accent{border-color:rgba(106,180,204,0.35);color:rgba(106,180,204,0.9);background:rgba(106,180,204,0.04);}
 
-.product-cta{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#fff;text-decoration:none;padding:14px 32px;border:1px solid rgba(255,255,255,0.35);transition:all 0.3s;border-radius:2px;width:fit-content;}
+.product-cta{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#fff;text-decoration:none;padding:14px 32px;border:1px solid rgba(255,255,255,0.35);transition:all 0.3s;border-radius:8px;width:fit-content;}
 .product-cta:hover{background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.6);}
 .product-cta-arrow{font-size:16px;transition:transform 0.3s;}
 .product-cta:hover .product-cta-arrow{transform:translate(3px,-2px);}
@@ -124,7 +124,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 40px;height:80px;d
 .cta-strip-title em{font-style:italic;color:rgba(255,255,255,0.5);}
 .cta-strip-sub{font-size:17px;margin-bottom:44px;max-width:420px;margin-left:auto;margin-right:auto;}
 
-.btn-primary{font-size:14px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;padding:17px 44px;background:#fff;color:#000;text-decoration:none;transition:all 0.3s;border-radius:2px;box-shadow:0 0 40px rgba(255,255,255,0.12);}
+.btn-primary{font-size:14px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;padding:17px 44px;background:#fff;color:#000;text-decoration:none;transition:all 0.3s;border-radius:8px;box-shadow:0 0 40px rgba(255,255,255,0.12);}
 .btn-primary:hover{background:rgba(255,255,255,0.9);}
 
 footer{padding:48px 56px;border-top:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
@@ -174,7 +174,19 @@ footer{padding:48px 56px;border-top:1px solid rgba(255,255,255,0.07);display:fle
   <div class="page-header-grid"></div>
   <div class="page-header-beam"></div>
   <div class="page-header-corner"></div>
-  <div class="page-header-corner-br"></div>
+  <svg style="position:absolute;top:0;right:0;width:45%;height:100%;opacity:0.8;pointer-events:none;" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMid slice">
+    <circle cx="100" cy="90" r="11" fill="rgba(255,255,255,0.75)"/>
+    <circle cx="280" cy="130" r="9" fill="rgba(106,180,204,0.8)"/>
+    <circle cx="360" cy="60" r="7" fill="rgba(255,255,255,0.65)"/>
+    <circle cx="200" cy="280" r="12" fill="rgba(106,180,204,0.72)"/>
+    <circle cx="330" cy="320" r="8" fill="rgba(255,255,255,0.6)"/>
+    <line x1="100" y1="90" x2="280" y2="130" stroke="rgba(255,255,255,0.42)" stroke-width="2"/>
+    <line x1="280" y1="130" x2="360" y2="60" stroke="rgba(106,180,204,0.48)" stroke-width="2"/>
+    <line x1="280" y1="130" x2="200" y2="280" stroke="rgba(255,255,255,0.35)" stroke-width="2"/>
+    <line x1="200" y1="280" x2="330" y2="320" stroke="rgba(106,180,204,0.38)" stroke-width="2"/>
+    <circle cx="280" cy="130" r="24" fill="rgba(255,255,255,0.05)"/>
+    <circle cx="200" cy="280" r="22" fill="rgba(106,180,204,0.06)"/>
+  </svg>
   <div class="page-header-content">
     <div class="page-header-eyebrow">
       <div class="page-header-eyebrow-line"></div>
